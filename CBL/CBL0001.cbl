@@ -17,7 +17,7 @@
       *  e.g. ACCTREC is linked in JCL file CBL0001J to &SYSUID..DATA  *
       *  where &SYSUID. stands for Your z/OS user id                   *
       *  e.g. if Your user id is Z54321,                               *
-      *  the data set used for ACCTREC is Z54321.DATA	                *
+      *  the data set used for ACCTREC is Z54321.DATA                  *
       ******************************************************************
       *-----------------------------------------------------------------
        DATA DIVISION.
