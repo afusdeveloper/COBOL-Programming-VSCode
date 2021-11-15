@@ -1,18 +1,18 @@
-      *-----------------------
+      *-----------------------------------------------------------------
        IDENTIFICATION DIVISION.
-      *-----------------------
-       PROGRAM-ID.    CBL0002
-       AUTHOR.        Otto B. Fun.
-      *--------------------
+      *-----------------------------------------------------------------
+       PROGRAM-ID.                     CBL0002.
+       AUTHOR.                         AYMARA M FUSARO.
+      *-----------------------------------------------------------------
        ENVIRONMENT DIVISION.
-      *--------------------
+      *-----------------------------------------------------------------
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
            SELECT PRINT-LINE ASSIGN TO PRTLINE.
            SELECT ACCT-REC   ASSIGN TO ACCTREC.
-      *-------------
+      *-----------------------------------------------------------------
        DATA DIVISION.
-      *-------------
+      *-----------------------------------------------------------------
        FILE SECTION.
        FD  PRINT-LINE RECORDING MODE F.
        01  PRINT-REC.
@@ -40,9 +40,9 @@
        WORKING-STORAGE SECTION.
        01 FLAGS.
          05 LASTREC           PIC X VALUE SPACE.
-      *------------------
+      *-----------------------------------------------------------------
        PROCEDURE DIVISION.
-      *------------------
+      *-----------------------------------------------------------------
        OPEN-FILES.
            OPEN INPUT  ACCT-REC.
            OPEN OUTPUT PRINT-LINE.
@@ -72,5 +72,5 @@
            MOVE LAST-NAME    TO  LAST-NAME-O.
            MOVE FIRST-NAME   TO  FIRST-NAME-O.
            MOVE COMMENTS     TO  COMMENTS-O.
-           WRITE PRINT-REX.
+           WRITE PRINT-REC.
       *
