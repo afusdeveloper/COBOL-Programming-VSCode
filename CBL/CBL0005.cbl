@@ -16,8 +16,8 @@
        FILE SECTION.
        FD  PRINT-LINE RECORDING MODE F.
       ******************************************************************
-      *FD -- describes the layout of PRINT-LINE file,                  *
-      *including level numbers, variable names, data types and lengths *
+      *  FD -- describes the layout of PRINT-LINE file, including      *
+      *  level numbers, variable names, data types and lengths         *
       ******************************************************************
       *
        01  PRINT-REC.
@@ -99,9 +99,9 @@
            05  FILLER         PIC X(40) VALUE SPACES.
       *
       ******************************************************************
-      *HEADER -- structures for report or column headers,              *
-      *that need to be setup in WORKING-STORAGE so they can be used    *
-      *in the PROCEDURE DIVISION                                       *
+      *  HEADER -- structures for report or column headers,            *
+      *  that need to be setup in WORKING-STORAGE so they can be used  *
+      *  in the PROCEDURE DIVISION                                     *
       ******************************************************************
       *
        01 WS-CURRENT-DATE-DATA.
@@ -122,8 +122,8 @@
            OPEN OUTPUT PRINT-LINE.
        OPEN-FILES-END.
       ******************************************************************
-      *OPEN-FILES-END -- consists of an empty paragraph suffixed by    *
-      *-END that ends the past one and serves as a visual delimiter    *
+      *  OPEN-FILES-END -- consists of an empty paragraph suffixed by  *
+      *  -END that ends the past one and serves as a visual delimiter  *
       ******************************************************************
       *
        WRITE-HEADERS.
