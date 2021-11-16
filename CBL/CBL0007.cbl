@@ -1,18 +1,18 @@
-      *-----------------------
+      *-----------------------------------------------------------------
        IDENTIFICATION DIVISION.
-      *-----------------------
-       PROGRAM-ID.    CBL0007
-       AUTHOR.        Otto B. Boolean.
-      *--------------------
+      *-----------------------------------------------------------------
+       PROGRAM-ID.                     CBL0007.
+       AUTHOR.                         AYMARA M FUSARO.
+      *-----------------------------------------------------------------
        ENVIRONMENT DIVISION.
-      *--------------------
+      *-----------------------------------------------------------------
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
            SELECT PRINT-LINE ASSIGN TO PRTLINE.
            SELECT ACCT-REC   ASSIGN TO ACCTREC.
-      *-------------
+      *-----------------------------------------------------------------
        DATA DIVISION.
-      *-------------
+      *-----------------------------------------------------------------
        FILE SECTION.
        FD  PRINT-LINE RECORDING MODE F.
        01  PRINT-REC.
@@ -37,10 +37,12 @@
                10  CITY-COUNTY    PIC X(20).
                10  USA-STATE      PIC X(15).
                    88  STATE      VALUE 'Virginia'.
-      *    Level-number 88 declares a conditional data-name called STATE
-      *    which is associated with data-name USA-STATE.
-      *    STATE becomes TRUE when 'Virginia' is put into USA-STATE.
-      *    STATE is used in the parapgraph IS-STATE-VIRGINIA.
+      ******************************************************************
+      *  Level-number 88 declares a conditional data-name called STATE *
+      *  which is associated with data-name USA-STATE.                 *
+      *  STATE becomes TRUE when 'Virginia' is put into USA-STATE.     *
+      *  STATE is used in the parapgraph IS-STATE-VIRGINIA.            *
+      ******************************************************************
       *
            05  RESERVED           PIC X(7).
            05  COMMENTS           PIC X(50).
@@ -101,9 +103,9 @@
                10  WS-CURRENT-SECOND       PIC 9(02).
                10  WS-CURRENT-CENTISECOND  PIC 9(02).
       *
-      *------------------
+      *-----------------------------------------------------------------
        PROCEDURE DIVISION.
-      *------------------
+      *-----------------------------------------------------------------
        OPEN-FILES.
            OPEN INPUT  ACCT-REC.
            OPEN OUTPUT PRINT-LINE.
@@ -142,10 +144,12 @@
            END-READ.
       *
        IS-STATE-VIRGINIA.
-           IF STATE ADD 1 TO VIRGINIA-CLIENTS.
+           IF STATE ADD 1 TO VIRGINIA-CLIENTS
            END-IF.
-      *    When the current value of USA-STATE equals 'Virginia'
-      *    the conditional data-name STATE is TRUE.
+      ******************************************************************
+      *    When the current value of USA-STATE equals 'Virginia'       *
+      *    the conditional data-name STATE is TRUE.                    *
+      ******************************************************************
       *
        WRITE-RECORD.
            MOVE ACCT-NO      TO  ACCT-NO-O.
